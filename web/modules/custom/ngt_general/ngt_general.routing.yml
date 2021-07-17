@@ -1,0 +1,17 @@
+ngt.settings:
+  path: '/admin/config/ngt/settings'
+  defaults:
+    _title: 'Configuraciones NGT'
+  requirements:
+    _permission: 'access NGT settings'
+  options:
+    _admin_route: TRUE
+ngt.admin_general_form:  
+  path: '/admin/config/ngt/adminsettings/general'  
+  defaults:  
+    _form: '\Drupal\ngt_general\Plugin\Form\GeneralConfigForm'  
+    _title: 'Configuración general de la plataforma'  
+  requirements:  
+    _permission: 'access administration pages'  
+  options:  
+    _admin_route: TRUE  

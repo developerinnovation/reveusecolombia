@@ -1,0 +1,6 @@
+ngt.admin_general_form:
+  title: 'NGT Configuracion general'
+  route_name: 'ngt.admin_general_form'
+  description: 'Configuración general de la plataforma'
+  parent: system.admin_config_system
+  weight: 99
