@@ -15,9 +15,16 @@
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" media="all" href="/{{ directory }}/asset/css/style.css?temp={{ " now "|date("m/d/Y/H/i/s ") }}">            
+  
+    <link rel="stylesheet" type="text/css" href="/{{ directory }}/asset/styles/bootstrap.min.css">
+    <link href="/{{ directory }}/asset/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/{{ directory }}/asset/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/{{ directory }}/asset/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/{{ directory }}/asset/plugins/OwlCarousel2-2.2.1/animate.css">
+    <link href="/{{ directory }}/asset/plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/{{ directory }}/asset/styles/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="/{{ directory }}/asset/styles/responsive.css">
+
     <!-- Script external -->
     {{ script_external|raw }}       
     <!-- End script external -->
@@ -45,32 +52,38 @@
         {{ 'Skip to main navigation'|t }}
       </a>
     </div>
-
-    <!-- ______________________ HEADER _______________________ -->
-      {% include '@ngt_theme/header.html.twig' %} 
-    <!-- ____________________ END HEADER ____________________ -->
-
-
-
-    <!-- ______________________ MAIN _______________________ -->
-        {{ page_top }} {{ page }} {{ page_bottom }}
-    <!-- ___________________ END MAIN _______________________ -->
+    <div class="super_container">
+      <!-- ______________________ HEADER _______________________ -->
+        {% include '@ngt_theme/header.html.twig' %} 
+      <!-- ____________________ END HEADER ____________________ -->
 
 
-    <!-- ______________________ FOOTER _______________________ -->
-          {% include '@ngt_theme/footer.html.twig' %}
-    <!-- __________________ END FOOTER _______________________ -->
 
-    <!-- ______________________ MODAL _______________________ -->
-      
-    <!-- __________________ END MODAL _______________________ -->
+      <!-- ______________________ MAIN _______________________ -->
+          {{ page_top }} {{ page }} {{ page_bottom }}
+      <!-- ___________________ END MAIN _______________________ -->
 
-    <js-bottom-placeholder token="{{ placeholder_token }}">
+
+      <!-- ______________________ FOOTER _______________________ -->
+            {% include '@ngt_theme/footer.html.twig' %}
+      <!-- __________________ END FOOTER _______________________ -->
+  </div>
+
+   
+        <script src="/{{ directory }}/asset/js/jquery-3.2.1.min.js"></script>
+        <script src="/{{ directory }}/asset/js/popper.js"></script>
+        <script src="/{{ directory }}/asset/js/bootstrap.min.js"></script>
+        <script src="/{{ directory }}/asset/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+        <script src="/{{ directory }}/asset/plugins/easing/easing.js"></script>
+        <script src="/{{ directory }}/asset/plugins/parallax-js-master/parallax.min.js"></script>
+        <script src="/{{ directory }}/asset/plugins/colorbox/jquery.colorbox-min.js"></script>
+        <script src="/{{ directory }}/asset/js/custom.js"></script>
+        
+        <js-bottom-placeholder token="{{ placeholder_token }}">
         {% if browser_sync.enabled %}
         <script id="__bs_script__">
-        document.write("<script async src='http://{{ browser_sync.host }}:{{ browser_sync.port }}/browser-sync/browser-sync-client.js'><\/script>".replace("HOST", location.hostname));
+          document.write("<script async src='http://{{ browser_sync.host }}:{{ browser_sync.port }}/browser-sync/browser-sync-client.js'><\/script>".replace("HOST", location.hostname));
         </script>
         {% endif %}
-
   </body>
 </html>

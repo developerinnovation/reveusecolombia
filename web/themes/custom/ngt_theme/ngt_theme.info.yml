@@ -3,6 +3,7 @@ type: theme
 description: 'Tema NGT Base'
 version: '1.01'
 core: 8.x
+core_version_requirement: ^8 || ^9
 base theme: bootstrap_barrio
 libraries:
   - core/normalize
